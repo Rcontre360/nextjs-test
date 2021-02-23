@@ -7,7 +7,8 @@ class App extends React.Component{
 		return(
 		<Container>
 			<GlobalStyle/>
-		<Container>
+			<h1>epa</h1>
+		</Container>
 		);
 	}
 };

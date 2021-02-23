@@ -1,4 +1,4 @@
-import styled, {GlobalStyle} from "styled-components";
+import styled, {createGlobalStyle,css} from "styled-components";
 
 export const colors = {
 	primary:"#2B2E4A",
@@ -6,6 +6,25 @@ export const colors = {
 	auxiliar:"#903749",
 	clear:"#53354A",
 	text:"#FF8965"
+}
+
+const stylesFunction = props=>{
+	return css`
+		${props.css}
+	`;
+}
+
+export const flexStyle = (dir="row",align="center")=>{
+	let alignItems = `align-items:${align};`
+	if (dir==="row" || dir==="row-reverse")
+			alignItems = `align-items: center;`
+
+	return`
+	display: flex;
+	flex-direction: ${dir};
+	justify-content: ${align};
+	${alignItems}
+	`
 }
 
 export const Container = styled.div.attrs(props=>({

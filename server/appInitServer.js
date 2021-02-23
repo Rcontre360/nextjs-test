@@ -39,7 +39,7 @@ const initServer = ()=>{
 	app.use(customErrorHandler);
 	databaseConnection(process.env.MONGO_URI);
 
-	return server;
+	return app;
 }
 
 module.exports = initServer();
