@@ -6,7 +6,7 @@ const path = require('path');
 
 const corsConfig = require("./configuration/cors");
 const {databaseConnection} = require("./configuration/mongo");
-const {customErrorHandler,notFoundHandler} = require("./error_handlers");
+const {customErrorHandler} = require("./error_handlers");
 
 const initServer = ()=>{ 
 	
@@ -17,7 +17,7 @@ const initServer = ()=>{
 	app.use(cors(corsConfig));
 
 	app.use(customErrorHandler);
-	//databaseConnection(process.env.MONGO_URI);
+	databaseConnection(process.env.MONGO_URI);
 	
 	return app;
 }

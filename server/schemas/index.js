@@ -13,7 +13,6 @@ const UserSchema = new Schema({
 
 module.exports = {
 	Users:model("users",UserSchema),
-	Messages:model("messages",MessageSchema),
 };
 
 

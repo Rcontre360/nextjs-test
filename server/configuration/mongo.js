@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 const options = {
-	//dbName:"chat_application",
+	dbName:"nextjs-test",
 
 	useNewUrlParser:true,
 	useUnifiedTopology:true,
