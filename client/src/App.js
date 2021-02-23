@@ -5,7 +5,15 @@ class App extends React.Component{
 
 	render(){
 		return(
-		<Container flex="column">
+		<Container 
+			flex="column" 
+			css={`
+				h1{
+					font-size:500%;
+				}
+				height:90vh;
+			`}
+		>
 			<GlobalStyle/>
 			<h1>React application</h1>
 			<Form css={`
@@ -14,8 +22,18 @@ class App extends React.Component{
 					margin:1em;
 				}
 			`}>
-				<Input/>
-				<Button>
+				<Input 
+					css={`
+						font-size:200%;
+						padding: 0.5em 1em;
+					`}
+				/>
+				<Button 
+					css={`
+						font-size:150%;
+						padding:0.6em;
+					`}
+				>
 					CREATE
 				</Button>
 			</Form>

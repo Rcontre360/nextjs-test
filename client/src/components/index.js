@@ -68,7 +68,7 @@ export const Form = styled.form`
 export const Input = styled(BaseInput)`
 	padding:0.2em;
 	border-radius:5px;
-	color:${colors["text"]};
+	color:${colors["primary"]};
 	background:${colors["clear"]};
 	outline:none;
 	margin:0.3em;
