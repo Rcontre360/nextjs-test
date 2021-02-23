@@ -1,10 +1,13 @@
 import React from "react";
+import {Container,GlobalStyle} from "./components"
 
 class App extends React.Component{
 
 	render(){
 		return(
-			<h1>Start</h1>
+		<Container>
+			<GlobalStyle/>
+		<Container>
 		);
 	}
 };
