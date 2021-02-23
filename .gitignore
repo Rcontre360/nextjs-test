@@ -2,9 +2,8 @@
 #create test for nextjs
 create
 
+node_modules
 server/node_modules
-client/node_modules
-client/public/fontawesome
 client/build
-client/.eslintcache
-client/.next
+.eslintcache
+.next

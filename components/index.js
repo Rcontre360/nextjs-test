@@ -54,7 +54,7 @@ const BaseInput = props=>{
 	return(
 	<React.Fragment>
 		<label htmlFor={name} >{name}</label>
-		{Input?<Input id={name} {...rest}/>:<input id={name} {...rest}/>}
+		<input id={name} {...rest}/>
 	</React.Fragment>
 	);
 }
