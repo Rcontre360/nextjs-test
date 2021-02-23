@@ -1,11 +1,12 @@
+import React from "react"
 import styled, {createGlobalStyle,css} from "styled-components";
 
 export const colors = {
-	primary:"#2B2E4A",
-	secondary:"#E84545",
-	auxiliar:"#903749",
-	clear:"#53354A",
-	text:"#FF8965"
+	primary:"#1b262c",
+	secondary:"#0f4c75",
+	auxiliar:"#3282b8",
+	clear:"#bbe1fa",
+	text:"#F0F0F0"
 }
 
 const stylesFunction = props=>{
@@ -33,6 +34,44 @@ export const Container = styled.div.attrs(props=>({
 }))`
 	${props=>flexStyle(props.flex,props.align)}
 	padding:0.5em;
+	${stylesFunction}
+`
+
+export const Button = styled.button`
+	background:${colors["auxiliar"]};
+	color:${colors["text"]};
+	border:none;
+	border-radius:5px;
+	padding:5px;
+	outline:none;
+	${stylesFunction}
+`
+
+
+const BaseInput = props=>{
+	const {name,Input,...rest} = props;
+
+	return(
+	<React.Fragment>
+		<label htmlFor={name} >{name}</label>
+		{Input?<Input id={name} {...rest}/>:<input id={name} {...rest}/>}
+	</React.Fragment>
+	);
+}
+
+export const Form = styled.form`
+	${flexStyle("column","space-between")}
+	padding:0.8em;
+	${stylesFunction}
+`
+
+export const Input = styled(BaseInput)`
+	padding:0.2em;
+	border-radius:5px;
+	color:${colors["text"]};
+	background:${colors["clear"]};
+	outline:none;
+	margin:0.3em;
 	${stylesFunction}
 `
 

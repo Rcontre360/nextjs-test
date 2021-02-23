@@ -1,13 +1,24 @@
 import React from "react";
-import {Container,GlobalStyle} from "./components"
+import {Container,Button,Input,Form,GlobalStyle} from "./components"
 
 class App extends React.Component{
 
 	render(){
 		return(
-		<Container>
+		<Container flex="column">
 			<GlobalStyle/>
-			<h1>epa</h1>
+			<h1>React application</h1>
+			<Form css={`
+				padding-top:0px;
+				&>*{
+					margin:1em;
+				}
+			`}>
+				<Input/>
+				<Button>
+					CREATE
+				</Button>
+			</Form>
 		</Container>
 		);
 	}
