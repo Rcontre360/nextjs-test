@@ -13,8 +13,14 @@ nextApp.prepare()
 		return nextApp.render(req, res, '/App', req.query)
 	});
 
+	app.get("/:log.example:domain.com/:name",(req,res)=>{
+		console.log(req.params)
+		return nextApp.render(req, res, '/User', req.params)
+	})
+
 	app.post("/newUser",(req,res)=>{
 		console.log(req.body)
+		return nextApp.render(req, res, '/App', req.query)
 	})
 
 	 app.get('*', (req, res) => {

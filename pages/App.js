@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import {Container,Button,Input,Form,GlobalStyle} from "../components"
 
 class App extends React.Component{
@@ -9,16 +10,13 @@ class App extends React.Component{
 		this.setState({userName:e.target.value})
 	}
 
-	sendUserName(e){
+	async sendUserName(e){
 		e.preventDefault();
-		fetch("/newUser",{
-			method:"POST",
-			body:{
-				user:this.state.userName
-			}
-		}).then(res=>res.json())
-		.then(res=>console.log("sent ",res))
-		.catch(err=>console.log("ERROR:",err));
+		const val = await axios.post(
+			"/newUser",
+			{userName:this.state.userName}, 
+	        {}
+	    );
 	}
 
 	render(){
