@@ -1,5 +1,5 @@
 import React from "react";
-import {Container,Button,Input,Form,GlobalStyle} from "./components"
+import {Container,Button,Input,Form,GlobalStyle} from "../components"
 
 class App extends React.Component{
 
@@ -16,12 +16,16 @@ class App extends React.Component{
 		>
 			<GlobalStyle/>
 			<h1>React application</h1>
-			<Form css={`
-				padding-top:0px;
-				&>*{
-					margin:1em;
-				}
-			`}>
+			<Form 
+				method="POST"
+				
+				css={`
+					padding-top:0px;
+					&>*{
+						margin:1em;
+					}
+				`}
+			>
 				<Input 
 					css={`
 						font-size:200%;
@@ -34,7 +38,7 @@ class App extends React.Component{
 						padding:0.6em;
 					`}
 				>
-					CREATE
+					epa
 				</Button>
 			</Form>
 		</Container>
