@@ -9,7 +9,30 @@ const User = (props)=>{
 	const {asPath} = useRouter();
 	const URL = asPath.split("/");
 	const userName = URL[URL.length-1];
-	console.log(firebase)
+	
+	const createDynamicLink = async e=>{
+		e.preventDefault()
+		try {
+			const val = await axios.post(
+				"https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=AIzaSyBcqYmqeUUGVJTR3ahJ9O7v9Mxet5hcmOY",
+				{userName:this.state.userName}, 
+		        {
+				  "dynamicLinkInfo": {
+					    "domainUriPrefix": "https://www.theveganbakesale.page.link",
+					    "link": asPath,
+					    "androidInfo": {
+					      "androidPackageName": "com.theveganbakesale.android"
+					    },
+					    "iosInfo": {
+					      "iosBundleId": "com.theveganbakesale.ios"
+					    }
+				   }
+				}
+		    );
+		} catch(err){
+			console.log("ERROR:",err);
+		}
+	}
 
 	return(
 	<Container 
@@ -24,7 +47,7 @@ const User = (props)=>{
 		<GlobalStyle/>
 		<h1>{`This page is for ${userName}`}</h1>
 		<Form 
-			onSubmit={()=>1}
+			onSubmit={createDynamicLink}
 			css={`
 				padding-top:0px;
 				&>*{

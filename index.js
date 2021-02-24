@@ -15,7 +15,7 @@ nextApp.prepare()
 		return nextApp.render(req, res, '/App', req.query)
 	});
 
-	app.get("/:nameA.example:domain.com/:nameB",asyncExpressHandler(async (req,res)=>{
+	app.get(`/:nameA.${process.env.DOMAIN_NAME}.com/:nameB`,asyncExpressHandler(async (req,res)=>{
 		console.log(req.params)
         const {nameA,nameB} = req.params;
 

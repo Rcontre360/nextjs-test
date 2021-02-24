@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {   
+    "build":"next build",
     "client-install": "npm install --prefix client",
     "start": "NODE_ENV=production node index.js",    
     "server": "nodemon index.js",    
-    "client": "npm run dev --prefix client",    
+    "client": "npm run dev --prefix client",   
+    "export": "npm run build && next export -o _static", 
     "dev": "npm run server"
   },
   "keywords": [],
@@ -19,14 +21,14 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-validator": "^6.9.2",
-    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.5",
-    "socket.io": "^3.0.4",
-    "uuid": "^8.3.2"
+    "next":"^10.0.7",
+    "axios":"^0.21.0",
+    "firebase":"^8.2.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies":{
-    "morgan":"^1.10.0",
     "nodemon":"^2.0.6"
   },
   "homepage": "."
