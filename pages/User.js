@@ -2,12 +2,14 @@ import React from "react";
 import axios from "axios";
 import { useRouter } from 'next/router'
 import {Container,Button,Input,Form,GlobalStyle} from "../components"
+import firebase from "../firebase";
 
 const User = (props)=>{
 
 	const {asPath} = useRouter();
 	const URL = asPath.split("/");
 	const userName = URL[URL.length-1];
+	console.log(firebase)
 
 	return(
 	<Container 

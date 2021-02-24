@@ -8,7 +8,11 @@ var firebaseConfig = {
     storageBucket: "netxtjs-test.appspot.com",
     messagingSenderId: "686736965332",
     appId: "1:686736965332:web:b034a7d6242befcb4f0541",
-    measurementId: "G-42BKJL87SS"
+    measurementId: "G-42BKJL87SS",
+    "appAssociation": "AUTO",
+	"rewrites": [ { "source": "/**", "dynamicLinks": true } ]
 };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+export default firebase;

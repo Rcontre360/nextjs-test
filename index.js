@@ -3,6 +3,7 @@ const url = require('url');
 const app = require("./server/appInitServer");
 const {Users} = require("./server/schemas");
 const {asyncExpressHandler} = require("./server/error_handlers")
+
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({dev});
 const nextHandler = nextApp.getRequestHandler();
